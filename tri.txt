@@ -10,7 +10,7 @@ struct triangle
 
 int main ()
 {
-     struct triangle t[1000];
+     struct triangle t[2000];
     int n;
 printf("Enter num of triangles : ");
 scanf("%d",&n);
