@@ -1,0 +1,59 @@
+
+struct triangle
+{
+    float x;
+    float y;
+    float z;
+};
+
+
+
+int main ()
+{
+     struct triangle t[1000];
+    int n;
+printf("Enter num of triangles : ");
+scanf("%d",&n);
+
+for (int i=1;i<=n;i++)
+{
+
+    printf("Enter dimensions of triangle %d \n ",i);
+
+    printf("x of triangle %d =",i);
+    scanf("%f",&t[i].x);
+
+    printf("y of triangle %d =",i);
+    scanf("%f",&t[i].y);
+
+     printf("z of triangle %d =",i);
+    scanf("%f",&t[i].z);
+
+}
+
+float s[n];
+float p[n];
+
+for (int j=1;j<=n;j++)
+{
+    p[j]=((t[j].x)+(t[j].y)+(t[j].z))/2;
+    s[j]=sqrt(p[j]*(p[j]-(t[j].x))*(p[j]-(t[j].y))*(p[j]-(t[j].z)));
+}
+
+
+for(int i=n;i>0;i--)
+{
+
+
+
+
+
+}
+
+
+    return 0;
+}
+
+
+
+
