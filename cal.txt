@@ -1,0 +1,52 @@
+/*calculator.c*/
+#include <stdlib.h>
+#include <stdio.h>
+#include "calculator.h"
+
+ptr_func_app_calc global_callback_address = NULL;
+void app_register_callback(ptr_func_app_calc ptr_callback_func)
+{
+	if(ptr_callback_func != NULL)
+	{
+		global_callback_address = ptr_callback_func;
+	}
+}
+void add(int val_1, int val_2)
+{
+	int result = 0;
+	result = val_1 + val_2;
+	if(global_callback_address != NULL)
+	{
+		global_callback_address('+', result);
+	}
+
+}
+void subtract(int val_1, int val_2)
+{
+	int result = 0;
+	result = val_1 - val_2;
+	if(global_callback_address != NULL)
+	{
+		global_callback_address('-', result);
+	}
+}
+void multiply(int val_1, int val_2)
+{
+	int result = 0;
+	result = val_1 * val_2;
+	if(global_callback_address != NULL)
+	{
+		global_callback_address('*', result);
+	}
+}
+void divide(int val_1, int val_2)
+{
+	int result = 0;
+	result = val_1 / val_2;
+	if(global_callback_address != NULL)
+	{
+		global_callback_address('/', result);
+	}
+}
+
+
